@@ -65,6 +65,31 @@ VS Code
 
 🏗️ System Architecture
 
+## 🏗️ Architecture Flow
+
+```
+                     Client
+                        │
+                        ▼
+              REST API Controllers
+                        │
+                        ▼
+            Business Service Layer
+         ┌──────────────┼──────────────┐
+         │              │              │
+         ▼              ▼              ▼
+     MySQL DB       Redis Cache    Kafka Producer
+                                          │
+                                          ▼
+                                    Kafka Topic
+                                          │
+                                          ▼
+                                   Kafka Consumer
+                                          │
+                                          ▼
+                    Event Processing / Notifications
+```
+
 SmartPay follows a layered backend architecture designed for maintainability, scalability, and separation of responsibilities.
 
 The system is divided into multiple layers where each component has a specific responsibility.
@@ -182,36 +207,6 @@ Loose coupling between components
 Better scalability
 Reliable event processing
 
-Architecture Flow
-                Client
-                  |
-                  |
-                  v
-          REST API Controllers
-                  |
-                  |
-                  v
-          Business Service Layer
-                  |
-        -----------------------
-        |                     |
-        v                     v
-   MySQL Database        Redis Cache
-        |
-        |
-        v
- Transaction Data
-
-
-        |
-        v
-
-   Kafka Event Pipeline
-        |
-        |
-        v
- Kafka Consumers
-(Event Processing)
 
 📸 Project Screenshots
 
