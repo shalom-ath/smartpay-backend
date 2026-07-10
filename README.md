@@ -181,6 +181,7 @@ Benefits:
 Loose coupling between components
 Better scalability
 Reliable event processing
+
 Architecture Flow
                 Client
                   |
@@ -218,41 +219,41 @@ Architecture Flow
 
 Swagger UI provides interactive documentation for all SmartPay REST APIs.
 
-![Swagger API Documentation](docs/images/swagger-api.png)
+![Swagger API Documentation](docs/swagger-api.png)
 
 2) Swagger Schemas 
 
-![Swagger Schemas](docs/images/swagger-schemas_.png)
+![Swagger Schemas](docs/swagger-schemas_.png)
 
 3) Postman API Testing showing Transaction Successfull
 
 REST endpoints were tested using Postman to validate authentication, wallet operations, and API responses. 
 
-![Mysql Table , Postman](docs/images/transaction-successfull.png)
+![Mysql Table , Postman](docs/transaction-successfull.png)
 
 4) Database Structure of wallets
 
 MySQL database tables demonstrate persistent storage design for users, wallets, and transactions.
 
-![MySQL Wallets](docs/images/wallets-table.png)
+![MySQL Wallets](docs/wallets-table.png)
 
 5) Wallet Creation 
 
 Postman validates the authenticity of wallet being created 
 
-![Postman-Validation](docs/images/wallet-creation.png)
+![Postman-Validation](docs/wallet-creation.png)
 
 6) Users Registration & Authentication
 
 Creates and authenticates a new SmartPay user account using email, password based and generates a JWT token for accessing secured API's
 
-![Swagger API - Users](docs/images/users-register.png)
+![Swagger API - Users](docs/users-register.png)
 
 7) Add Money API and others
 
 Allows users to add funds to their wallet , even transfers
 
-![Swagger API - Wallet](docs/images/addmoney-request.png)
+![Swagger API - Wallet](docs/addmoney-request.png)
 
 
 ⚙️ Running the Project Locally
