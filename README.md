@@ -92,6 +92,31 @@ VS Code
 
 SmartPay follows a layered backend architecture designed for maintainability, scalability, and separation of responsibilities.
 
+  Architecture Flow-
+
+
+                     Client
+                        │
+                        ▼
+              REST API Controllers
+                        │
+                        ▼
+            Business Service Layer
+         ┌──────────────┼──────────────┐
+         │              │              │
+         ▼              ▼              ▼
+     MySQL DB       Redis Cache    Kafka Producer
+                                          │
+                                          ▼
+                                    Kafka Topic
+                                          │
+                                          ▼
+                                   Kafka Consumer
+                                          │
+                                          ▼
+                    Event Processing / Notifications
+```
+
 The system is divided into multiple layers where each component has a specific responsibility.
 
 1. Client Layer
@@ -145,6 +170,7 @@ Using Spring Data JPA and Hibernate:
 Entities are mapped to database tables
 Database operations are performed through repositories
 Transaction records and user information are persisted securely
+
 5. MySQL Database Layer
 
 MySQL acts as the primary persistent storage system.
@@ -205,8 +231,12 @@ Benefits:
 
 Loose coupling between components
 Better scalability
+<<<<<<< HEAD
 Reliable event processing
 
+=======
+Reliable event processing.
+>>>>>>> 8ecacf1832731f2ff2db534218aacf791fba5a97
 
 📸 Project Screenshots
 
