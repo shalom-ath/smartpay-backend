@@ -1,5 +1,7 @@
 package com.shalom.smartpay.entity;
 
+
+import jakarta.persistence.Version;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,6 +20,9 @@ public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Version
+    private Long version;
 
     @OneToOne
     @JoinColumn(name = "user_id", nullable = false, unique = true)
